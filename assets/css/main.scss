@@ -1,0 +1,11 @@
+---
+---
+
+@import "minimal-mistakes/skins/dark";  // Manual skin selection
+@import "minimal-mistakes";
+
+[data-skin="dark"] {
+  --body-background-color: #2a2a2a;
+  --text-color: #ffffff;
+}
+

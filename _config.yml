@@ -1,0 +1,28 @@
+# _config.yml
+title: Nahuel Villa
+description: Professional portfolio - Robotics, Legged Locomotion
+url: "https://nahuelvilla.github.io"
+repository: NahuelVilla/NahuelVilla.github.io
+
+favicon: /assets/images/favicon.ico
+
+# Use ONE of these:
+theme: minimal-mistakes-jekyll  # Uncomment this
+# remote_theme: mmistakes/minimal-mistakes@4.26.2  # Comment this out
+
+plugins:
+  - jekyll-include-cache
+  - jekyll-paginate
+  - jekyll-feed
+
+minimal_mistakes_skin: "dark"
+ui:
+  dark_mode: true
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+sass:
+  style: compressed
