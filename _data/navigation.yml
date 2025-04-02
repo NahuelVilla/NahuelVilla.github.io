@@ -1,10 +1,8 @@
 # _data/navigation.yml
 main:
-  # - title: '<i class="fas fa-home"></i> Inicio'
-  #   url: /
   - title: '<i class="fas fa-code"></i> Proyectos'
     url: /projects/
-  # - title: '<i class="fas fa-blog"></i> Blog'
-  #   url: /year-archive/
   - title: '<i class="fas fa-user"></i> Sobre mí'
     url: /about/
+  - title: '<a href="#" id="theme-toggle"><i id="theme-icon" class="fas fa-moon"></i></a>'
+    url: "#"

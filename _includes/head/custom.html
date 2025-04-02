@@ -3,3 +3,39 @@
 <link rel="shortcut icon" type="image/x-icon" href="{{ "/assets/images/favicon.ico" | relative_url }}">
 <!-- Link to web manifest -->
 <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
+    
+    if (!themeToggle || !themeIcon) return; // Ensure elements exist
+    
+    // Get the stored theme or system preference
+    const currentTheme = localStorage.getItem("theme") || 
+      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+
+    // Apply the theme immediately
+    document.documentElement.setAttribute("data-skin", currentTheme);
+    
+    // Update the icon based on the theme
+    themeIcon.classList.toggle("fa-moon", currentTheme === "light");
+    themeIcon.classList.toggle("fa-sun", currentTheme === "dark");
+
+    // Function to apply the theme and store in localStorage
+    function applyTheme(theme) {
+      document.documentElement.setAttribute("data-skin", theme);
+      themeIcon.classList.toggle("fa-moon", theme === "light");
+      themeIcon.classList.toggle("fa-sun", theme === "dark");
+      localStorage.setItem("theme", theme);
+    }
+    
+    // Toggle theme on click
+    themeToggle.addEventListener("click", function(event) {
+      event.preventDefault();
+      const newTheme = document.documentElement.getAttribute("data-skin") === "dark" ? "light" : "dark";
+      applyTheme(newTheme);
+    });
+  });
+</script>
+

@@ -1,11 +1,63 @@
 ---
 ---
 
-@import "minimal-mistakes/skins/dark";  // Manual skin selection
+// @import "minimal-mistakes/skins/dark";  // Manual skin selection
 @import "minimal-mistakes";
+
+:root {
+  --body-background-color: #ffffff;
+  --text-color: #000000;
+  --navbar-background-color: #f8f8f8;
+  --footer-background-color: #f1f1f1;
+  --footer-text-color: #000000;
+  --footer-margin-background: #ffffff;  /* Ensure margin matches */
+}
 
 [data-skin="dark"] {
   --body-background-color: #2a2a2a;
   --text-color: #ffffff;
+  --navbar-background-color: #333333;
+  --footer-background-color: #222222;
+  --footer-text-color: #ffffff;
+  --footer-margin-background: #2a2a2a;  /* Ensure margin matches */
 }
 
+body {
+  background-color: var(--body-background-color);
+  color: var(--text-color);
+}
+
+/* Ensure the entire navigation bar changes color */
+.masthead, 
+.masthead__inner-wrap, 
+.masthead__menu, 
+#site-nav.greedy-nav {
+  background-color: var(--navbar-background-color);
+}
+
+footer {
+  background-color: var(--footer-background-color);
+  color: var(--footer-text-color);
+}
+
+/* Fix white margin above footer */
+.page__footer {
+  background-color: var(--body-background-color); /* Match background */
+  padding-top: 2em; /* Ensure no padding pushes the footer down */
+}
+
+hr, 
+.page__footer, 
+.archive__subtitle, 
+.site-title, 
+.greedy-nav {
+  border-color: var(--divider-color);
+}
+
+.masthead {
+  border-bottom: 1px solid var(--divider-color);
+}
+
+[data-skin="dark"] {
+  --divider-color: #555; /* Adjust this gray tone if needed */
+}
