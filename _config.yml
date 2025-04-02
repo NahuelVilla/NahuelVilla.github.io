@@ -6,9 +6,8 @@ repository: NahuelVilla/NahuelVilla.github.io
 
 favicon: /assets/images/favicon.ico
 
-# Use ONE of these:
 theme: minimal-mistakes-jekyll  # Uncomment this
-# remote_theme: mmistakes/minimal-mistakes@4.26.2  # Comment this out
+remote_theme: mmistakes/minimal-mistakes@4.26.2  # Comment this out
 
 plugins:
   - jekyll-include-cache
