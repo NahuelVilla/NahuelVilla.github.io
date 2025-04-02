@@ -6,13 +6,14 @@ repository: NahuelVilla/NahuelVilla.github.io
 
 favicon: /assets/images/favicon.ico
 
-theme: minimal-mistakes-jekyll  # Uncomment this
+# theme: minimal-mistakes-jekyll  # Uncomment this
 remote_theme: mmistakes/minimal-mistakes@4.26.2  # Comment this out
 
 plugins:
   - jekyll-include-cache
   - jekyll-paginate
   - jekyll-feed
+  - jekyll-remote-theme
 
 minimal_mistakes_skin: "dark"
 ui:
