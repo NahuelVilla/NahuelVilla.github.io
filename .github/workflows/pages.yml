@@ -15,7 +15,9 @@ jobs:
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gems-
+      - name: Install Bundler
+        run: gem install bundler:2.5.23
       - uses: helaili/jekyll-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          bundler_version: "2.2.33"   # Change to a version that works with Ruby 2.7
+          bundler_version: "2.5.23"
