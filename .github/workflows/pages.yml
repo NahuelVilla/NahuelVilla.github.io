@@ -16,13 +16,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
       - name: Set up Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0.0'  # Upgrade Ruby version
-
+          ruby-version: '3.1.0'  # Update to a known available version
       - name: Install Bundler
         run: sudo gem install bundler:2.5.23
-
       - uses: helaili/jekyll-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
