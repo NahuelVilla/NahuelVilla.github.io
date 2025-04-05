@@ -2,26 +2,33 @@ name: Build and deploy Jekyll site to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/cache@v3
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.0.2'  # Update to a known available version
-      - name: Install Bundler
-        run: sudo gem install bundler:2.5.23
-      - uses: helaili/jekyll-action@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          bundler_version: "2.5.23"
+    - uses: actions/checkout@v3
+    - uses: actions/cache@v3
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.0.2'  # Ensure this Ruby version is compatible
+    - name: Install Bundler
+      run: sudo gem install bundler:2.5.23
+    - name: Install Dependencies
+      run: bundle install
+    - name: Build the site
+      run: bundle exec jekyll build
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site
