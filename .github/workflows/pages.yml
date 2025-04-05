@@ -16,7 +16,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
       - name: Install Bundler
-        run: gem install bundler:2.5.23
+        run: sudo gem install bundler:2.5.23
       - uses: helaili/jekyll-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
