@@ -18,7 +18,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1.0'  # Update to a known available version
+          ruby-version: '3.0.2'  # Update to a known available version
       - name: Install Bundler
         run: sudo gem install bundler:2.5.23
       - uses: helaili/jekyll-action@v2
