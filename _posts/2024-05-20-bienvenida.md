@@ -1,5 +1,5 @@
 ---
-title: "Place holder for a post"
+title: ""
 date: 2024-05-20
 ---
 
